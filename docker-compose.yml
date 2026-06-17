@@ -3,22 +3,21 @@ services:
     build:
       context: ./monorepo_front
       dockerfile: Dockerfile
-      image: ton-user-dockerhub/monorepo_front:${TAG:-latest}
+    image: ton-user-dockerhub/monorepo_front:${TAG:-latest}
     ports:
       - "5173:5173"
     networks:
-      - monolit
+      - monolite
 
   backend:
     build:
       context: ./monorepo_back
       dockerfile: Dockerfile
-      image: ton-user-dockerhub/monorepo_back:${TAG:-latest}
+    image: ton-user-dockerhub/monorepo_back:${TAG:-latest}
     ports:
       - "8080:8080"
     networks:
-      - monolit
+      - monolite
 
-
-  networks:
-    monolit
+networks:
+  monolite:
