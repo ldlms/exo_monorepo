@@ -7,7 +7,7 @@ services:
     ports:
       - "5173:5173"
     networks:
-      - monolite
+      - monolit
 
   backend:
     build:
@@ -17,8 +17,8 @@ services:
     ports:
       - "8080:8080"
     networks:
-      - monolite
+      - monolit
 
 
   networks:
-    monolite
+    monolit
