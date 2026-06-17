@@ -3,7 +3,7 @@ services:
     build:
       context: ./monorepo_front
       dockerfile: Dockerfile
-    image: ton-user-dockerhub/monorepo_front:${TAG:-latest}
+    image: ldlms/monorepo_front:${TAG:-latest}
     ports:
       - "5173:5173"
     networks:
@@ -13,7 +13,7 @@ services:
     build:
       context: ./monorepo_back
       dockerfile: Dockerfile
-    image: ton-user-dockerhub/monorepo_back:${TAG:-latest}
+    image: ldlms/monorepo_back:${TAG:-latest}
     ports:
       - "8080:8080"
     networks:
