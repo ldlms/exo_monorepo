@@ -33,6 +33,7 @@ jobs:
         with:
           working-directory: ./monorepo_back
           args: --timeout=5m
+          install-mode: goinstall
 
   build-and-push:
     needs: lint
