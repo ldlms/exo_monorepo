@@ -1,6 +1,6 @@
 module monorepo_back
 
-go 1.26.4
+go 1.23
 
 require (
 	github.com/bytedance/gopkg v0.1.4 // indirect
