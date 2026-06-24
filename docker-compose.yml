@@ -1,23 +1,32 @@
 services:
   frontend:
-    build:
-      context: ./monorepo_front
-      dockerfile: Dockerfile
     image: ldlms/monorepo_front:${TAG:-latest}
     ports:
       - "5173:5173"
     networks:
       - monolite
+    deploy:
+      replicas: 4
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 2
+        delay: 10s
 
   backend:
-    build:
-      context: ./monorepo_back
-      dockerfile: Dockerfile
     image: ldlms/monorepo_back:${TAG:-latest}
     ports:
       - "8080:8080"
     networks:
       - monolite
+    deploy:
+      replicas: 4
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 2
+        delay: 10s
 
 networks:
   monolite:
+    driver: overlay  
