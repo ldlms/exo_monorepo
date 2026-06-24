@@ -2,7 +2,7 @@ services:
   frontend:
     image: ldlms/monorepo_front:${TAG:-latest}
     ports:
-      - "5173:5173"
+      - "80:80"
     networks:
       - monolite
     deploy:
